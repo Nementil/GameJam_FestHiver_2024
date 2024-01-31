@@ -60,5 +60,5 @@ Material:
     m_Colors:
     - _CloudColor: {r: 1, g: 1, b: 1, a: 1}
     - _CloudDistortSpeed: {r: 0.05, g: 0.01, b: 0, a: 0}
-    - _CloudSpeed: {r: 0, g: 0.01, b: 0, a: 0}
+    - _CloudSpeed: {r: 0, g: 0.04, b: 0, a: 0}
   m_BuildTextureStacks: []
