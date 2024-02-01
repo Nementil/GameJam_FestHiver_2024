@@ -4,25 +4,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
+    [field:Header("Values to pass")]
+    public Vector2 move{get;private set;}
+    public Vector2 deltamouse{get;private set;}
+    public float buttonShoot{get;private set;}
+    public float buttonEscape{get;private set;}
+    public float buttonInteract{get;private set;}
+    public float buttonJump{get;private set;}
     private static InputManager _Instance;
-    public static InputManager Instance
-    {
-        get
-        {
-            return _Instance;
-        }
-    }
-    
     private BasicInputActions inputActions;
-    //public Vector2 move;sss
     
-    [SerializeField]public Vector2 move{get;private set;}
-    [SerializeField]public Vector2 deltamouse{get;private set;}
-    [SerializeField]public float buttonShoot{get;private set;}
-    [SerializeField]public float buttonEscape{get;private set;}
-    [SerializeField]public float buttonInteract{get;private set;}
-    [SerializeField]public float buttonJump{get;private set;}
-    
+    public static InputManager Instance => _Instance;
 
     private void Awake() {
         if(_Instance !=null && _Instance!=this)
@@ -41,7 +33,7 @@ public class InputManager : MonoBehaviour
     }
     public void GetMove(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(context.performed||context.canceled)
         {
             move = context.ReadValue<Vector2>();
         }
@@ -55,26 +47,26 @@ public class InputManager : MonoBehaviour
     }
     public void GetButtonShoot(InputAction.CallbackContext context) 
     {
-        if(context.performed)
+        if(context.performed||context.canceled)
         {
-            Debug.Log(context.ReadValue<float>());
+            Debug.Log($"Input Shoot: {context.ReadValue<float>()}");
             buttonShoot = context.ReadValue<float>();
         }
     }
     public void GetButtonEscape(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(context.performed||context.canceled)
         {
-            Debug.Log(context.ReadValue<float>());
+            Debug.Log($"Input Escape: {context.ReadValue<float>()}");
             buttonEscape = context.ReadValue<float>();
         }
     }   
 
     public void GetButtonInteract(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(context.performed||context.canceled)
         {
-            Debug.Log(context.ReadValue<float>());
+            Debug.Log($"Input Interact: {context.ReadValue<float>()}");
             buttonInteract = context.ReadValue<float>();
 
         }
