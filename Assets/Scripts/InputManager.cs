@@ -49,7 +49,7 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed||context.canceled)
         {
-            Debug.Log($"Input Shoot: {context.ReadValue<float>()}");
+            //Debug.Log($"Input Shoot: {context.ReadValue<float>()}");
             buttonShoot = context.ReadValue<float>();
         }
     }
@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed||context.canceled)
         {
-            Debug.Log($"Input Escape: {context.ReadValue<float>()}");
+            //Debug.Log($"Input Escape: {context.ReadValue<float>()}");
             buttonEscape = context.ReadValue<float>();
         }
     }   
@@ -66,7 +66,7 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed||context.canceled)
         {
-            Debug.Log($"Input Interact: {context.ReadValue<float>()}");
+            //Debug.Log($"Input Interact: {context.ReadValue<float>()}");
             buttonInteract = context.ReadValue<float>();
 
         }
@@ -75,7 +75,7 @@ public class InputManager : MonoBehaviour
     {
         if(context.performed||context.canceled)
         {
-            Debug.Log(context.ReadValue<float>());
+            //Debug.Log(context.ReadValue<float>());
             buttonJump = context.ReadValue<float>();
 
         }

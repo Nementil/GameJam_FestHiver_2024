@@ -5,14 +5,21 @@ using UnityEngine;
 [RequireComponent(typeof (CharacterController))]
 public class Player_Move : MonoBehaviour
 {
+    [Header("Event")]
+    [SerializeField] public GameEvent gameEvent;
+    
+    [Header("References")]
+    [SerializeField] private InputManager inputManager;
     private Rigidbody rb;
-    private InputManager inputManager;
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
     [SerializeField] Camera cam;
+    [SerializeField] private SO_Player so_player;
+    
+    [Header("Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
+    private bool groundedPlayer;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float jumpCooldown = 0.25f;
     [SerializeField] private bool jumpReady = true;
@@ -24,6 +31,10 @@ public class Player_Move : MonoBehaviour
         if(cam==null &&GameObject.FindWithTag("Main Camera").GetComponent<Camera>()!=null)
         {
             cam=GameObject.FindWithTag("Main Camera").GetComponent<Camera>();
+        }
+        if(so_player!=null)
+        {
+            Initialize();
         }
     }
     private void Start()
@@ -59,6 +70,7 @@ public class Player_Move : MonoBehaviour
          
         if (move != Vector3.zero)
         {
+            UpdateVelocity();
             gameObject.transform.forward = move;
         }
     }
@@ -102,5 +114,16 @@ public class Player_Move : MonoBehaviour
             Vector3 limitVel =flatVel.normalized*playerSpeed;
             rb.velocity =new Vector3(limitVel.x,rb.velocity.y,limitVel.z);
         }
+    }
+    private void Initialize()
+    {
+        playerSpeed=so_player.speed;
+        jumpHeight=so_player.jumpForce;
+    }
+
+    public void UpdateVelocity()
+    {
+        Debug.Log("Raising");
+        gameEvent.Raise(this,"rb.velocity");
     }
 }

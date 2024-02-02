@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject ObjectToThrow;
     [SerializeField] private GameObject projectileContainer;
+    [SerializeField] private SO_Projectile so_projectile;
     [Header("Settings")]
     [SerializeField] private  int projectileCount;
     [SerializeField] private float projectileCoolDown;
@@ -24,6 +26,13 @@ public class Player_Shoot : MonoBehaviour
     [SerializeField] private  float projectileForce;
     [SerializeField] private  float projectileUpwardForce;
 
+    void Awake()
+    {
+        if(so_projectile!=null)
+        {
+            Initilize();
+        }
+    }
     void Start()
     {
         inputManager=InputManager.Instance;
@@ -57,5 +66,11 @@ public class Player_Shoot : MonoBehaviour
     private void ResetThrow()
     {
         readyToThrow=true;
+    }
+
+    private void Initilize()
+    {
+        ObjectToThrow=so_projectile.projectile_GameObject;
+        projectileCoolDown =so_projectile.cooldown;
     }
 }

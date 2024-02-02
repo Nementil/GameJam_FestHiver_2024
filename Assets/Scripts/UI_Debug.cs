@@ -11,6 +11,8 @@ public class UI_Debug : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private Transform tf;
     [SerializeField] private Rigidbody rb;
+    private string test;
+    [SerializeField] public GameEvent gameEvent;
     void Start()
     {
         field=GetComponent<TextMeshProUGUI>();
@@ -21,6 +23,7 @@ public class UI_Debug : MonoBehaviour
     void Update()
     {
         field.text=RetrievePhysicsData(rb,tf);
+        field.text+="\n" + test;
     }
 
     public string RetrievePhysicsData(Rigidbody rb, Transform tf)
@@ -30,5 +33,14 @@ public class UI_Debug : MonoBehaviour
         result+="Velocity "+rb.velocity.magnitude.ToString("0.0 m/s")+"\n";
         result+="Up "+rb.velocity.y.ToString("0.0 m/s")+"\n";
         return result;
+    }
+    public void UpdateText(Component sender,object data)
+    {
+        Debug.Log($"Receiving:{data.GetType()}");
+        Debug.Log($"Sender:{sender.GetType()}");
+        //if(data is Vector3)
+        
+        
+        test=data.ToString();
     }
 }
