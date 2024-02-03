@@ -70,7 +70,7 @@ public class Player_Move : MonoBehaviour
          
         if (move != Vector3.zero)
         {
-            UpdateVelocity();
+            //UpdateVelocity();
             gameObject.transform.forward = move;
         }
     }

@@ -20,7 +20,7 @@ public class GameEvent : ScriptableObject
         {
             Debug.Log($"No listeners on {this.name}");
         }
-        Debug.Log($"Type is {listeners[0].GetType()}");
+        //Debug.Log($"Type is {listeners[0].GetType()}");
     }
 
     public void Raise() 

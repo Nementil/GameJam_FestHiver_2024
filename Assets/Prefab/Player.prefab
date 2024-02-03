@@ -301,7 +301,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &5284612658827950111
 MonoBehaviour:
@@ -315,8 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6ecc75577204f4b929d4ca36bc1f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   gameEvent: {fileID: 11400000, guid: 242d5a4dfb5d0c346aac534e07df785b, type: 2}
+  inputManager: {fileID: 0}
+  cam: {fileID: 0}
   so_player: {fileID: 11400000, guid: f49d9b5d25a811045a3809ea10282042, type: 2}
   playerSpeed: 7
   jumpHeight: 2

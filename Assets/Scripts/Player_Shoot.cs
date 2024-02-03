@@ -49,7 +49,7 @@ public class Player_Shoot : MonoBehaviour
     private void Throw()
     {
         readyToThrow=false;
-        Debug.Log("Throwing!");
+        //Debug.Log("Throwing!");
         GameObject projectile = Instantiate(ObjectToThrow,pointOfOrigin.position,cam.transform.rotation,projectileContainer.transform);
         Rigidbody projectileRb= projectile.GetComponent<Rigidbody>();
         UnityEngine.Vector3 forceDirection=cam.transform.forward;
