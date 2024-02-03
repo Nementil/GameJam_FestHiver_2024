@@ -91,7 +91,7 @@ namespace UnityEngine{
             {
                 Transform target = rangeChecks[0].transform;
                 Vector3 directionToTraget= (target.position-transform.position).normalized;
-                if(Vector3.Angle(transform.position,directionToTraget)>fov/2)
+                if(Vector3.Angle(transform.forward,directionToTraget)>fov/2)
                 {
                     float distanceToTarget= Vector3.Distance(transform.position,target.position);
                     if(!Physics.Raycast(transform.position,directionToTraget,distanceToTarget))
