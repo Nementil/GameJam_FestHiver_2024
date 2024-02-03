@@ -1,0 +1,40 @@
+-La lumiere au creux de l'hiver
+-Le froid est une ressource
+
+Theme:
+FPS
+Horreur-Dehors
+Idée
+Nuit, foret
+Neige est un ressource
+Lune, Lanterne
+Ennemi-> Bonhomme de neige?
+Microphone pour detection de l'ennemi?
+Ennemi freeze avec une lanterne
+
+Les ressources sont liées au froid
+
+Le perso est juste 2 bras qui vole.
+Un avec une lanterne, l'autre qui grab les ressources
+
+Tu commence le jeu dans une foret, 
+avec une lanterne qui peut geler les monstres qui te poursuivent.
+Ton objectif est d'arriver à la sortie de la map.
+-Tu utilise une munition liée au froid, qui recharge ta lanterne.
+-Tu ne peux pas tuer le monstre
+-Le monstre ne te poursuit pas constament,
+ mais fait des pauses.
+-Le terrain est un peu irregulier+bloqué pour eviter que 
+ le AI fasse une ligne droite vers le joueur.
+-Il y a des landmarks pour guider le joueur vers la sortie.
+-Les munitions sont limités
+
+Script/Functionnalities
+Joueur->Move,Jump,Lantern,
+		Item(munitions pour Lantern),
+
+Item->Type de Item(munition,health, autre bonus?)
+Monstre->AI(state machine,mouvement speed)
+		StateMachine[Stalk,Chase,Attack,Respawn,Angry?]
+GameManager->Win/Lose
+		
