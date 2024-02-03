@@ -9,16 +9,17 @@ namespace UnityEngine{
     public class Monstre : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent agent; 
-        [SerializeField] private monsterState state;
+        [SerializeField] public monsterState state {get;private set;}
         [SerializeField] private GameObject player;
-        [SerializeField] float distanceLimit;
+        [SerializeField] float attackDistance; //Disstance du joueur avant d'attaquer
+        [Range(1,360)]
         [SerializeField] int fov;// moitié du fov!
-        [SerializeField] private float searchInterval;
-        [SerializeField] private float searchRadius;
-        [SerializeField] private LayerMask targetMask;
-        [SerializeField] private LayerMask obstructionMask;
-        [SerializeField] private GameObject[] checkpoint;
-        [SerializeField] private bool canSeePlayer;
+        [SerializeField] private float searchInterval;//Interval de la coroutine de recherche
+        [SerializeField] private float searchRadius; //Rayon de recherche de la sphere
+        [SerializeField] private LayerMask targetMask; //Mask du joueur
+        [SerializeField] private LayerMask obstructionMask; //Mask de l'environment
+        [SerializeField] private GameObject[] checkpoint; //Gameobjects pour respawn
+        [SerializeField] public bool canSeePlayer{get;private set;} //Bool pour savoir si le joueur est en ligne de vue
         //public GameEvent monsterEvent;
 
         void Start()
@@ -39,10 +40,11 @@ namespace UnityEngine{
         {
             //agent.SetDestination(player.transform.position);
             //player is near?Raycast?
-            // Debug.Log(state.ToString());
+            //Debug.Log($"Agent destination is: {agent.destination}");
+            Debug.Log($"<color=yellow>Can see player? :{canSeePlayer}</color>");
             if(canSeePlayer)
             {
-                if(Vector3.Distance(this.transform.position,player.transform.position)<distanceLimit)
+                if(Vector3.Distance(transform.position,player.transform.position)<attackDistance)
                 {
                     if(state!=monsterState.Attack)
                     {
@@ -89,13 +91,15 @@ namespace UnityEngine{
             Collider [] rangeChecks=Physics.OverlapSphere(transform.position,searchRadius,targetMask);
             if(rangeChecks.Length!=0)
             {
-                Debug.Log("Player in Sphere");
+                //Debug.Log("Player in Sphere");
                 Transform target = rangeChecks[0].transform;
-                Vector3 directionToTraget= (target.position-transform.position).normalized;
-                if(Vector3.Angle(transform.forward,directionToTraget)>fov/2)
+                Vector3 directionToTarget= (target.position-transform.position).normalized;
+                Debug.DrawRay(transform.position,directionToTarget,Color.red);
+                if(Vector3.Angle(transform.forward,directionToTarget)>fov/2)
                 {
+                    Debug.Log("In line of sight");
                     float distanceToTarget= Vector3.Distance(transform.position,target.position);
-                    if(!Physics.Raycast(transform.position,directionToTraget,distanceToTarget))
+                    if(!Physics.Raycast(transform.position,directionToTarget,distanceToTarget,obstructionMask))
                     {
                         canSeePlayer=true;
                     }
@@ -107,7 +111,7 @@ namespace UnityEngine{
                 }
                 else 
                 {
-                canSeePlayer = false;
+                    canSeePlayer = false;
                 }
             }
             else if (canSeePlayer)
@@ -155,7 +159,7 @@ namespace UnityEngine{
             if(agent.remainingDistance<=agent.stoppingDistance||agent.destination==null)
             {
                 Vector3 point;
-                if(RandomPoint(transform.position,5f,out point))
+                if(RandomPoint(transform.position,10f,out point))
                 {
                     agent.SetDestination(point);
                 }

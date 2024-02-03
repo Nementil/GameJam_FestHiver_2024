@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,7 @@ public class UI_Debug : MonoBehaviour
     [SerializeField] private Transform tf;
     [SerializeField] private Rigidbody rb;
     private string test;
-    [SerializeField] public GameEvent gameEvent;
+    [SerializeField] public Monstre monstre;
     void Start()
     {
         field=GetComponent<TextMeshProUGUI>();
@@ -23,7 +24,7 @@ public class UI_Debug : MonoBehaviour
     void Update()
     {
         field.text=RetrievePhysicsData(rb,tf);
-        field.text+="\n" + test;
+        field.text+="\n" + AddText();
     }
 
     public string RetrievePhysicsData(Rigidbody rb, Transform tf)
@@ -42,5 +43,12 @@ public class UI_Debug : MonoBehaviour
         
         
         test=data.ToString();
+    }
+    public string AddText()
+    {
+        string result="";
+        result+=monstre.state.ToString() +"\n";
+    	result+="Can See Player? "+monstre.canSeePlayer +"\n";
+        return result;
     }
 }
