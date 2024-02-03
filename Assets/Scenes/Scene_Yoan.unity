@@ -5046,7 +5046,7 @@ GameObject:
   - component: {fileID: 1813831358}
   - component: {fileID: 1813831357}
   - component: {fileID: 1813831356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5267,7 +5267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964132229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5304,6 +5304,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 745512495}
+    - target: {fileID: 3306783861101210753, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4058261824556238403, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: cam
@@ -5314,10 +5319,20 @@ PrefabInstance:
       propertyPath: projectileContainer
       value: 
       objectReference: {fileID: 2136954278}
+    - target: {fileID: 4110645790960641137, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4910178253649581076, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910178253649581076, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6234608449143324711, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
@@ -5367,6 +5382,46 @@ PrefabInstance:
     - target: {fileID: 6234608449143324711, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626629623841968198, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: Gravity
+      value: -9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: Grounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: SprintSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: GroundedOffset
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977351768496562156, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018942797647592460, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5483,6 +5538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Debug Information
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711196962507635298, guid: 2da52453e1a7a39449d305a1bb439deb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
