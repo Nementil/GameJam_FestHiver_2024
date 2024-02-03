@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:Assets/Scenes/SceneMathilde.unity.meta
 guid: 268678621fcd31b4e860ae7713a35bd9
 DefaultImporter:
@@ -9,12 +8,6 @@ NativeFormatImporter:
 >>>>>>>> Stashed changes:Assets/Material Tony/Textures&Images/Bois.mat.meta
   externalObjects: {}
   mainObjectFileID: 2100000
-=======
-guid: a8c03c40fc5246549be7bba977997f4b
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
->>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 

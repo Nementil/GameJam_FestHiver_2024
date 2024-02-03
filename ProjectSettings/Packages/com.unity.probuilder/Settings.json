@@ -17,14 +17,11 @@
                 "value": "{\"m_Value\":\"ProBuilderLog.txt\"}"
             },
             {
-<<<<<<< Updated upstream
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "editor.materialPalettePath",
                 "value": "{\"m_Value\":\"Assets/ProBuilder Data/Default Material Palette.asset\"}"
             },
             {
-=======
->>>>>>> Stashed changes
                 "type": "UnityEngine.ProBuilder.SemVer, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "about.identifier",
                 "value": "{\"m_Value\":{\"m_Major\":5,\"m_Minor\":1,\"m_Patch\":1,\"m_Build\":-1,\"m_Type\":\"\",\"m_Metadata\":\"\",\"m_Date\":\"\"}}"
@@ -157,11 +154,7 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize",
-<<<<<<< Updated upstream
                 "value": "{\"m_Value\":{\"x\":-0.147735595703125,\"y\":0.16733430325984956,\"z\":-0.5394287109375}}"
-=======
-                "value": "{\"m_Value\":{\"x\":-131.36277770996095,\"y\":203.5994873046875,\"z\":-172.4793701171875}}"
->>>>>>> Stashed changes
             },
             {
                 "type": "UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -174,7 +167,6 @@
                 "value": "{}"
             },
             {
-<<<<<<< Updated upstream
                 "type": "UnityEngine.ProBuilder.Shapes.Shape, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.Door",
                 "value": "{}"
@@ -200,8 +192,6 @@
                 "value": "{}"
             },
             {
-=======
->>>>>>> Stashed changes
                 "type": "UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "mesh.userMaterial",
                 "value": "{\"m_Value\":{\"fileID\":2100000,\"guid\":\"0b9bd7623f3a0954d9047d7913ad253d\",\"type\":2}}"
