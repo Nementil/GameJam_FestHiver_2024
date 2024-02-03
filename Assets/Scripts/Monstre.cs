@@ -68,7 +68,7 @@ namespace UnityEngine{
                     Debug.Log("destination null");
                     agent.SetDestination(checkpoint[0].transform.position);
                 }
-                else
+                
                 {
                     state=monsterState.Stalk;
                     StateChange();
@@ -106,13 +106,11 @@ namespace UnityEngine{
                     else
                     {
                         //Monster must be more inquisitive!State change?
-                        Debug.Log("Obstacle");
                         canSeePlayer=false;
                     }
                 }
                 else 
                 {
-                        Debug.Log("Out of angle");
                     canSeePlayer = false;
                 }
             }
