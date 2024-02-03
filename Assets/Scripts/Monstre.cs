@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -11,19 +12,27 @@ namespace UnityEngine{
         [SerializeField] private NavMeshAgent agent; 
         [SerializeField] public monsterState state {get;private set;}
         [SerializeField] private GameObject player;
+        [SerializeField] private float speedMonster;
+        [SerializeField] private float accelerationMonster;
         [SerializeField] float attackDistance; //Disstance du joueur avant d'attaquer
         [Range(1,360)]
         [SerializeField] int fov;// moitié du fov!
         [SerializeField] private float searchInterval;//Interval de la coroutine de recherche
         [SerializeField] private float searchRadius; //Rayon de recherche de la sphere
+        [SerializeField] private float respawnDistance; //Rayon de recherche de la sphere
+        [SerializeField] public int rageCount {get;private set;}
+        private bool isAngry=false;
         [SerializeField] private LayerMask targetMask; //Mask du joueur
         [SerializeField] private LayerMask obstructionMask; //Mask de l'environment
-        [SerializeField] private GameObject[] checkpoint; //Gameobjects pour respawn
+        [SerializeField] public GameObject[] checkpoint{get; private set;} //Gameobjects pour respawn
         [SerializeField] public bool canSeePlayer{get;private set;} //Bool pour savoir si le joueur est en ligne de vue
         //public GameEvent monsterEvent;
-
+        [SerializeField] public StateController stateController;
+        [SerializeField] public State currentState;
         void Start()
         {
+            speedMonster=agent.speed;
+            accelerationMonster=agent.acceleration;
             canSeePlayer=false;
             if(player==null)
             {
@@ -38,6 +47,7 @@ namespace UnityEngine{
         // Update is called once per frame
         void Update()
         {
+            currentState.OnEnter(stateController);
             //agent.SetDestination(player.transform.position);
             //player is near?Raycast?
             //Debug.Log($"Agent destination is: {agent.destination}");
@@ -54,7 +64,7 @@ namespace UnityEngine{
                 }
                 else
                 {
-                    if(state!=monsterState.Chase)
+                   
                     {
                         state=monsterState.Chase;
                         StateChange();
@@ -69,8 +79,19 @@ namespace UnityEngine{
                     agent.SetDestination(checkpoint[0].transform.position);
                 }
                 
+                if(Vector3.Distance(transform.position,player.transform.position)<=respawnDistance)
                 {
                     state=monsterState.Stalk;
+                    StateChange();
+                }
+                else
+                {
+                    state=monsterState.Respawn;
+                    StateChange();
+                }
+                if(rageCount>5 && !isAngry)
+                {
+                    state=monsterState.Angry;
                     StateChange();
                 }
             }
@@ -122,6 +143,8 @@ namespace UnityEngine{
         private void IsChasing()
         {
             //Music chase?
+            agent.speed=speedMonster;
+            agent.acceleration=accelerationMonster;
             agent.destination=player.transform.position;
         }
 
@@ -184,18 +207,22 @@ namespace UnityEngine{
         private void IsRespawning()
         {
             //Mettre in timer pour calculer quand il faut mixup
+
         }
-        // public void CurrentState()
-        // {
-        //     Debug.Log("Sending");
-        //     monsterEvent.Raise(this,state.ToString());
-        // }
+        private void IsAngry()
+        {
+            agent.speed*=1.5f;
+            agent.acceleration*=1.1f;
+            agent.destination=player.transform.position;
+        }
+
         public void StateChange()
         {
             //CurrentState();
             switch (state) {
             case monsterState.Chase:
                 IsChasing();
+                rageCount++;
                 break;
             case monsterState.Stalk:
                 IsStalking();
@@ -205,6 +232,9 @@ namespace UnityEngine{
                 break;
             case monsterState.Respawn:
                 IsRespawning();
+                break;
+            case monsterState.Angry:
+                IsAngry();
                 break;
             default :
                 Debug.Log("Out of state, get respawn?");

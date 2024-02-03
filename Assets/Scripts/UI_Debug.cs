@@ -49,6 +49,7 @@ public class UI_Debug : MonoBehaviour
         string result="";
         result+=monstre.state.ToString() +"\n";
     	result+="Can See Player? "+monstre.canSeePlayer +"\n";
+        result+="Anger:"+ monstre.rageCount;
         return result;
     }
 }
