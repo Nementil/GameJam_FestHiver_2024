@@ -37,7 +37,7 @@ namespace UnityEngine{
         // Update is called once per frame
         void Update()
         {
-            agent.SetDestination(player.transform.position);
+            //agent.SetDestination(player.transform.position);
             //player is near?Raycast?
             // Debug.Log(state.ToString());
             if(canSeePlayer)
@@ -66,7 +66,7 @@ namespace UnityEngine{
                     Debug.Log("destination null");
                     agent.SetDestination(checkpoint[0].transform.position);
                 }
-                if(state!=monsterState.Stalk)
+                
                 {
                     state=monsterState.Stalk;
                     StateChange();
@@ -89,6 +89,7 @@ namespace UnityEngine{
             Collider [] rangeChecks=Physics.OverlapSphere(transform.position,searchRadius,targetMask);
             if(rangeChecks.Length!=0)
             {
+                Debug.Log("Player in Sphere");
                 Transform target = rangeChecks[0].transform;
                 Vector3 directionToTraget= (target.position-transform.position).normalized;
                 if(Vector3.Angle(transform.forward,directionToTraget)>fov/2)
