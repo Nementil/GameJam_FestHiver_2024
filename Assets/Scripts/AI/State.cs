@@ -228,3 +228,40 @@ public class Respawn:State
         //Debug.Log($"Is Respawning at {_monstre.checkpoint[0].transform.name}!");
     }
 }
+public class Stunned:State
+{
+    public override StateController sc{get;set;}
+    public override string stateName {get;set;}
+    public Monstre _monstre;
+    public float timer=5f;
+    public float currentTimer;
+    public Stunned(Monstre monstre)
+    {
+        stateName="Stunned";
+        _monstre=monstre;
+    }
+    public override void OnEnter()
+    {
+        Debug.Log("Is Stunned!");
+        currentTimer=timer;
+        _monstre.agent.speed=0;
+    }
+    public override void OnExit()
+    {
+        Debug.Log($"Time in Stunned State is {currentTimer}");
+        
+        _monstre.agent.speed=_monstre.player.GetComponent<FirstPersonController>().MoveSpeed-2;
+    }
+    public override void OnUpdate()
+    {
+        currentTimer-=Time.deltaTime;
+        _monstre.agent.speed=0;
+        if(currentTimer<=0)
+        {
+            Debug.Log("Stun Times up");
+            currentTimer=timer;
+        _monstre.isStunned=false;
+            // OnExit();
+        }
+    }
+}

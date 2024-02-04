@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightLanternPickup : MonoBehaviour
 {
-    [SerializeField] private float amountLight;
+    [SerializeField] private int amountLight;
 
 
     private void OnTriggerEnter(Collider other)

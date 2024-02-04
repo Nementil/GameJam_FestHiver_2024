@@ -35,11 +35,13 @@ namespace UnityEngine{
         [field:Header("Monster States")]
         [SerializeField] public StateController stateController;
         [SerializeField] public State currentState;
+        [SerializeField] public bool isStunned;
         private Stalk stalk;
         private Chase chase;
         private Attack attack;
         private Respawn respawn;
         private Angry angry;
+        private Stunned stunned;
         
         void Awake()
         {
@@ -50,9 +52,15 @@ namespace UnityEngine{
             attack=new(this);
             respawn=new(this);
             angry=new(this);
+            stunned=new(this);
+
             if(player==null)
             {
                 player=GameObject.FindGameObjectWithTag("Player");
+            }
+            if(checkpoint.Length==0)
+            {
+                checkpoint=GameObject.FindGameObjectsWithTag("Checkpoint");
             }
         }
         void Start()
@@ -72,7 +80,11 @@ namespace UnityEngine{
         void Update()
         {
             //Debug.Log($"<color=yellow>Can see player? :{canSeePlayer}</color>");
-            if(canSeePlayer)
+            if(isStunned)
+            {
+                if(stateController.currentState!=stunned)stateController.ChangeState(stunned);
+            }
+            else if(canSeePlayer)
             {
                 if(Vector3.Distance(transform.position,player.transform.position)<attackDistance)
                 {

@@ -25,7 +25,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private GameObject winScreen;
-
+    [SerializeField] public GameObject finalWin;
     [Header("UI healthSlider")]
     [SerializeField] private Slider healthSlider;
     

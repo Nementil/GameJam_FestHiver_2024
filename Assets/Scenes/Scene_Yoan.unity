@@ -4065,7 +4065,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb3089f833ad9f4589268b1848d4876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLight: 0
+  currentLight: 0
+  startingLight: 10
+  enemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &957001162
 GameObject:
   m_ObjectHideFlags: 0

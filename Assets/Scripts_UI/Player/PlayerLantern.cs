@@ -6,12 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerLantern : MonoBehaviour
 {
     [Header("Light Duration (Seconds)")]
-    [SerializeField] private float startingLight; // Value light in seconds
-    public float currentLight { get;set; }
-
+    // [SerializeField] private float startingLight; // Value light in seconds
+    // [SerializeField] private float startingLight; // Value light in seconds
+    [SerializeField] public int currentLight;
+    [SerializeField] private int startingLight; // Value light in seconds
     private bool isLanternActive = false;
     private float clickTime = 0f;
+    public LayerMask enemy;
     private StarterAssets.StarterAssetsInputs _input;
+
 
 
     // Start is called before the first frame update
@@ -33,7 +36,7 @@ public class PlayerLantern : MonoBehaviour
         }
 
         // Lantern in usage
-        LanternState();
+        //LanternState();
 
 
         // Disable use of Lantern
@@ -50,38 +53,54 @@ public class PlayerLantern : MonoBehaviour
 
     private void LanternDeactivate()
     {
-        isLanternActive = false;
         Debug.Log("Lantern OFF!");
+        isLanternActive = false;
     }
 
-    void LanternState()
-    {
-        if (isLanternActive)
-        {
-            clickTime += Time.deltaTime;
-            currentLight -= Time.deltaTime;
+    // void LanternState()
+    // {
+    //     if (isLanternActive)
+    //     {
+    //         clickTime += Time.deltaTime;
+    //         currentLight -= Time.deltaTime;
 
 
-            if (currentLight >= 0)
-            {
-                Debug.Log("Temps de clic : " + clickTime);
-            }
-            else
-            {
-                Debug.Log("Out of Light !");
-            }
-        }
-    }
+    //         if (currentLight >= 0)
+    //         {
+    //             Debug.Log("Temps de clic : " + clickTime);
+    //         }
+    //         else
+    //         {
+    //             Debug.Log("Out of Light !");
+    //         }
+    //     }
+    // }
 
     void LanternActivate()
     {
         isLanternActive = true;
         Debug.Log("<Color=red>Lantern ON!</color>");
         clickTime = 0f;
+        
+
+        Collider[] colliding =Physics.OverlapSphere(transform.position,5f,enemy);
+        if(colliding.Length>0)
+        {
+            foreach (var item in colliding)
+            {
+                if(item.transform.GetComponent<Monstre>()!=null)
+                {
+                    Debug.Log("Monster found");
+                    item.transform.GetComponent<Monstre>().isStunned=true;
+
+                }
+            }
+        }
+        currentLight--;
     }
 
 
-    public void RecoverLight(float amountLight)
+    public void RecoverLight(int amountLight)
     {
         currentLight = Mathf.Clamp(currentLight + amountLight, 0, startingLight);
 

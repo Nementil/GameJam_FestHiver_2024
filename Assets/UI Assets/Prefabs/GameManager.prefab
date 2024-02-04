@@ -1124,6 +1124,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 252359862317123933}
   gameoverScreen: {fileID: 512414764569958826}
   winScreen: {fileID: 2546285569234392008}
+  finalWin: {fileID: 0}
   healthSlider: {fileID: 1256823829118219140}
   lanternSlider: {fileID: 2081663548677155639}
   totalhealthBar: {fileID: 1383230051067493636}
