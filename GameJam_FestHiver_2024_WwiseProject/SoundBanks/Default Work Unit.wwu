@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{52F9A14E-6156-4713-B95A-82A98E45C380}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{52F9A14E-6156-4713-B95A-82A98E45C380}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="main" ID="{0B63B587-4D26-449E-A9CD-9F9E219DA087}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Icescape_Level" ID="{CBBB5E46-4493-4916-9D77-FB08D32CE218}" WorkUnitID="{822A9C41-3BA3-43E6-BC0B-C78F99453C4C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Footstep_Material" ID="{07AD861F-4408-4F52-8597-9F1E1A2ABF76}" WorkUnitID="{822A9C41-3BA3-43E6-BC0B-C78F99453C4C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Crystal_Emitter" ID="{676CFF7D-9FF5-4FAC-9D27-252DDD611A83}" WorkUnitID="{822A9C41-3BA3-43E6-BC0B-C78F99453C4C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

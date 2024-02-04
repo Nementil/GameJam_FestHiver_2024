@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{822A9C41-3BA3-43E6-BC0B-C78F99453C4C}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{822A9C41-3BA3-43E6-BC0B-C78F99453C4C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Crystal_Emitter" ID="{676CFF7D-9FF5-4FAC-9D27-252DDD611A83}">
+					<ChildrenList>
+						<Action Name="" ID="{CAE69D6D-09A2-4937-B890-2B0769A13D21}" ShortID="520738902">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crystal_Emitter" ID="{4673BBA2-08FE-44C5-ADFF-AC864F812D12}" WorkUnitID="{ED69E8C4-78B2-4385-8027-E6429BC992C9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Footstep_Material" ID="{07AD861F-4408-4F52-8597-9F1E1A2ABF76}">
+					<ChildrenList>
+						<Action Name="" ID="{1F65EA94-FE0A-4B75-B356-12E2DCFA1360}" ShortID="145974023">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footstep_Material" ID="{08B75297-A569-43A3-925C-073EDD38F73F}" WorkUnitID="{ED69E8C4-78B2-4385-8027-E6429BC992C9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Icescape_Level" ID="{CBBB5E46-4493-4916-9D77-FB08D32CE218}">
+					<ChildrenList>
+						<Action Name="" ID="{4EA3C3C2-CCE7-455D-B5B3-6E8475723FE8}" ShortID="808538593">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Icescape_Level" ID="{5DF3665C-410F-4E20-9880-EA0695989707}" WorkUnitID="{ED69E8C4-78B2-4385-8027-E6429BC992C9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

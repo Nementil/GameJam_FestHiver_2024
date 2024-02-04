@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{ED69E8C4-78B2-4385-8027-E6429BC992C9}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{ED69E8C4-78B2-4385-8027-E6429BC992C9}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Crystal_Emitter" ID="{4673BBA2-08FE-44C5-ADFF-AC864F812D12}" ShortID="150917326">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="test" ID="{9BBF1970-EB02-410D-99FF-E8DDEC42ED7C}" WorkUnitID="{586C5A69-512F-4AAA-97E8-EAA542D1577B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Crystal_Emitter" ID="{B040378B-2650-4B43-85F6-204EA6564696}">
+							<Language>SFX</Language>
+							<AudioFile>Crystal_Emitter.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="240637264"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Crystal_Emitter" ID="{B040378B-2650-4B43-85F6-204EA6564696}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Monster_Growl" ID="{B430B3D7-F333-4E7C-A33E-84E544EEAE15}" ShortID="614366018">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A02726A2-9D85-4DD9-AA58-F355A5C80240}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="300"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Monster_Growl" ID="{37FA5496-9A7F-4E86-B4D4-4B11733474F1}">
+							<Language>SFX</Language>
+							<AudioFile>Monster_Growl.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="861687336"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Monster_Growl" ID="{37FA5496-9A7F-4E86-B4D4-4B11733474F1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Folder Name="Player_Footsteps" ID="{0EDDDA64-61A1-40EC-80AC-0CDB56B8B6D1}" ShortID="868570563">
+					<ChildrenList>
+						<SwitchContainer Name="Footstep_Material" ID="{08B75297-A569-43A3-925C-073EDD38F73F}" ShortID="588420768">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Dirt" ID="{C8206B85-4ACC-4248-B352-1D2854050CA5}" WorkUnitID="{5F1020E3-D75D-46D0-B3BF-0375864FEDF9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Player_footsteps" ID="{34D89979-6352-4F2B-8FDB-A0C520D1E10E}" WorkUnitID="{5F1020E3-D75D-46D0-B3BF-0375864FEDF9}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Snow" ID="{C7A41E85-18BF-4B1D-948C-DC4D08914D9A}" ShortID="802269513">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="OST_FX_Pas_Neige_01" ID="{32FB9268-B771-4F29-96ED-902765A8452A}" ShortID="626595011">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="OST_FX_Pas_Neige_01" ID="{DE91828B-71CF-49F5-B879-22FF22A0EED6}">
+													<Language>SFX</Language>
+													<AudioFile>OST_FX_Pas_Neige_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="793472841"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="OST_FX_Pas_Neige_01" ID="{DE91828B-71CF-49F5-B879-22FF22A0EED6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="OST_FX_Pas_Neige_02" ID="{FF03D214-77AB-4213-B518-B80680F28E2E}" ShortID="192323304">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="OST_FX_Pas_Neige_02" ID="{AADA964D-4EC8-4166-8B1A-AFC4E0C2D313}">
+													<Language>SFX</Language>
+													<AudioFile>OST_FX_Pas_Neige_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="553561447"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="OST_FX_Pas_Neige_02" ID="{AADA964D-4EC8-4166-8B1A-AFC4E0C2D313}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="OST_FX_Pas_Neige_03" ID="{A1D50035-A200-4383-960B-2B3CDBCF7C24}" ShortID="35769426">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="OST_FX_Pas_Neige_03" ID="{6DF58CAB-4F06-42A9-B5B4-2B98F210A31B}">
+													<Language>SFX</Language>
+													<AudioFile>OST_FX_Pas_Neige_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="498422449"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="OST_FX_Pas_Neige_03" ID="{6DF58CAB-4F06-42A9-B5B4-2B98F210A31B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Wood" ID="{C45C5DA2-3F20-401E-A5AF-9D248D2A14EE}" ShortID="61084286">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="woodsteps-001" ID="{AAD6AF3E-A296-4023-AF89-57CBBBEF7601}" ShortID="720304347">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-001" ID="{85422E93-2EE6-4D4A-AB45-633147527867}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="690893453"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-001" ID="{85422E93-2EE6-4D4A-AB45-633147527867}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="woodsteps-002" ID="{B17E021A-4D4E-487F-8F2D-45793821CE16}" ShortID="828045564">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-002" ID="{157F7201-D39D-4776-8867-DE464B39B8F7}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1056112698"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-002" ID="{157F7201-D39D-4776-8867-DE464B39B8F7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="woodsteps-003" ID="{5E778D8C-BAD7-446D-9CE5-489D7884AFF5}" ShortID="423258048">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-003" ID="{4D182847-6A00-4169-BE27-EA185309A952}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="454505515"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-003" ID="{4D182847-6A00-4169-BE27-EA185309A952}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="woodsteps-004" ID="{0E475A91-59FE-4A28-8C28-DB83ABD5B10A}" ShortID="767596536">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-004" ID="{4A3C3A44-0164-4049-8DBE-0A04BFEA3AC5}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="239695818"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-004" ID="{4A3C3A44-0164-4049-8DBE-0A04BFEA3AC5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="woodsteps-005" ID="{0E4F8794-4C32-4F05-B00F-B0AD4A35DA58}" ShortID="588530212">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-005" ID="{58926E53-EAD9-4784-B5FE-54C273509527}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="222207677"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-005" ID="{58926E53-EAD9-4784-B5FE-54C273509527}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="woodsteps-006" ID="{4DF8AA79-E569-4DD3-ADE3-4EA118663945}" ShortID="688891305">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="woodsteps-006" ID="{6E7FE72F-6A91-43C5-B75E-2E9F72AE8E81}">
+													<Language>SFX</Language>
+													<AudioFile>woodsteps-006.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="350493717"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="woodsteps-006" ID="{6E7FE72F-6A91-43C5-B75E-2E9F72AE8E81}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Dirt" ID="{22BC1741-F99A-49CE-B04B-BE104647177B}" ShortID="936199959">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Dirtstep-001" ID="{5176C7C5-ED84-4008-B74F-9A715767BE17}" ShortID="211218155">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-001" ID="{C554FE08-2D38-40B3-A9FA-B002DD6CB403}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="91551535"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-001" ID="{C554FE08-2D38-40B3-A9FA-B002DD6CB403}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-002" ID="{C5E2DF08-DBAC-4971-BEF0-66C546DA0EE0}" ShortID="178903612">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-002" ID="{D6A6A5A1-6EBA-4ED6-9677-59BF4B2B2E84}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="16582658"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-002" ID="{D6A6A5A1-6EBA-4ED6-9677-59BF4B2B2E84}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-003" ID="{9EDA89A6-304C-47EB-9FDC-F057CF05E683}" ShortID="965944966">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-003" ID="{E4940337-4066-4B45-99F3-4E62EB92F7AA}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="97137757"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-003" ID="{E4940337-4066-4B45-99F3-4E62EB92F7AA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-004" ID="{D2CE0375-30E6-4EFF-BD43-E5ECFCB01108}" ShortID="302948730">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-004" ID="{7047E85C-8D7D-4E5B-857D-6F217FFA00CB}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="434086643"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-004" ID="{7047E85C-8D7D-4E5B-857D-6F217FFA00CB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-005" ID="{91F9CE43-DDE1-4229-8469-4B5A05C39041}" ShortID="714109142">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-005" ID="{5EC28572-93DF-44AB-96D2-039DF7A9F671}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717743286"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-005" ID="{5EC28572-93DF-44AB-96D2-039DF7A9F671}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-006" ID="{5297BD05-914F-415B-B4EC-3B0BE37D4F05}" ShortID="64686162">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-006" ID="{E556FD17-28F0-48B8-9A97-AF6FDBE5B1AA}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-006.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="281450739"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-006" ID="{E556FD17-28F0-48B8-9A97-AF6FDBE5B1AA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-007" ID="{E418733C-12E8-4738-A1EF-D264A57FD684}" ShortID="186131845">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-007" ID="{D962A84D-4CAD-41DF-B47D-AC71E78835F7}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-007.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="641137961"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-007" ID="{D962A84D-4CAD-41DF-B47D-AC71E78835F7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-008" ID="{82CC8B95-05F3-4510-B2B9-5716E5009AF0}" ShortID="272278729">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-008" ID="{75C88E6B-E67A-445C-8CA9-A4D0F2FAD690}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-008.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="198887319"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-008" ID="{75C88E6B-E67A-445C-8CA9-A4D0F2FAD690}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-009" ID="{9782098D-36E8-40DE-A0C2-12D4DDB7642B}" ShortID="533947132">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-009" ID="{190D2219-932D-4425-AA97-A3028466F4F8}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-009.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="964120202"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-009" ID="{190D2219-932D-4425-AA97-A3028466F4F8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-010" ID="{82FB6D4E-68BC-4C12-93E3-9976B8D03917}" ShortID="836687184">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-010" ID="{37F5B9F8-DC47-436F-8E50-60267E2922F0}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-010.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="881793090"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-010" ID="{37F5B9F8-DC47-436F-8E50-60267E2922F0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-011" ID="{37D0174D-D173-4F15-86AB-316846773725}" ShortID="733191976">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-011" ID="{40760F90-A6BD-4284-9376-7CE6BAF18CF6}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-011.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="301109634"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-011" ID="{40760F90-A6BD-4284-9376-7CE6BAF18CF6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Dirtstep-012" ID="{B8F9E36E-3A2E-4C08-8760-B5B04B88A3B5}" ShortID="346999839">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dirtstep-012" ID="{7730630F-19F4-498A-A91B-EBC748FEC604}">
+													<Language>SFX</Language>
+													<AudioFile>Dirtstep-012.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="848957878"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dirtstep-012" ID="{7730630F-19F4-498A-A91B-EBC748FEC604}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Dirt" ID="{22BC1741-F99A-49CE-B04B-BE104647177B}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Snow" ID="{C7A41E85-18BF-4B1D-948C-DC4D08914D9A}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Wood" ID="{C45C5DA2-3F20-401E-A5AF-9D248D2A14EE}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+				</Folder>
+				<Sound Name="Icescape_Level" ID="{5DF3665C-410F-4E20-9880-EA0695989707}" ShortID="352512123">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{3B89247D-D05B-4C6E-9B37-14A523A48FE7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BE2FFAB3-F0EB-40DE-8C5F-679E08A903BE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Icescape_Level" ID="{2AA19667-6773-4FEB-BBB7-2A48720B254C}">
+							<Language>SFX</Language>
+							<AudioFile>Icescape_Level.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="557495403"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Icescape_Level" ID="{2AA19667-6773-4FEB-BBB7-2A48720B254C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

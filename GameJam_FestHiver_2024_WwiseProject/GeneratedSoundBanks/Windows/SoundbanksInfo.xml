@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="1730208058" Name="Player_footsteps">
+					<Switches>
+						<Switch Id="787898836" Name="Snow"/>
+						<Switch Id="2058049674" Name="Wood"/>
+						<Switch Id="2195636714" Name="Dirt"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{3D8481BB-1DCD-B25A-641C-C2A8A44D8F19}">
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<Media>
+				<File Id="240637264" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crystal_Emitter.wav</ShortName>
+					<CachePath>SFX/Crystal_Emitter_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="557495403" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Icescape_Level.wav</ShortName>
+					<CachePath>SFX/Icescape_Level_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1786550623" Name="Play_Crystal_Emitter">
+					<MediaRefs>
+						<MediaRef Id="240637264"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1766743556" Name="Play_Footstep_Material"/>
+				<Event Id="916155420" Name="Play_Icescape_Level">
+					<MediaRefs>
+						<MediaRef Id="557495403"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="1730208058" Name="Player_footsteps">
+					<Switches>
+						<Switch Id="787898836" Name="Snow"/>
+						<Switch Id="2058049674" Name="Wood"/>
+						<Switch Id="2195636714" Name="Dirt"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{57F35E09-9435-FC7A-5984-C6C4DD7CE87A}</FileHash>
+</SoundBanksInfo>

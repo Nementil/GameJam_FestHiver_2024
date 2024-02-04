@@ -1,0 +1,17 @@
+Event	ID	Name			Wwise Object Path	Notes
+	916155420	Play_Icescape_Level			\Default Work Unit\Play_Icescape_Level	
+	1766743556	Play_Footstep_Material			\Default Work Unit\Play_Footstep_Material	
+	1786550623	Play_Crystal_Emitter			\Default Work Unit\Play_Crystal_Emitter	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1730208058	Player_footsteps			\Default Work Unit\Player_footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	787898836	Snow	Player_footsteps			
+	2058049674	Wood	Player_footsteps			
+	2195636714	Dirt	Player_footsteps			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	240637264	Crystal_Emitter	C:\Users\gaiji\Documents\GitHub\GameJam_FestHiver_2024\GameJam_FestHiver_2024_WwiseProject\.cache\Mac\SFX\Crystal_Emitter_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crystal_Emitter		1587696
+	557495403	Icescape_Level	C:\Users\gaiji\Documents\GitHub\GameJam_FestHiver_2024\GameJam_FestHiver_2024_WwiseProject\.cache\Mac\SFX\Icescape_Level_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Icescape_Level		10584096
+
