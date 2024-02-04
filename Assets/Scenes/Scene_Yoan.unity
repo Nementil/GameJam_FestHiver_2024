@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4049,10 +4049,11 @@ GameObject:
   - component: {fileID: 872620821}
   - component: {fileID: 872620820}
   - component: {fileID: 872620825}
+  - component: {fileID: 872620826}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
@@ -4179,14 +4180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c20045df083dc441944ed05bc23b23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 872620820}
   player: {fileID: 935227653}
   attackDistance: 2
   fov: 160
   searchInterval: 0.3
-  searchRadius: 15
-  respawnDistance: 100
-  rageCount: 0
+  searchRadius: 10
   targetMask:
     serializedVersion: 2
     m_Bits: 64
@@ -4196,6 +4194,20 @@ MonoBehaviour:
   checkpoint:
   - {fileID: 1511735064}
   - {fileID: 448405978}
+  stateController: {fileID: 872620826}
+--- !u!114 &872620826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872620819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8a4299a5d00754cac8b392a37f6b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameState: 
 --- !u!1 &935227653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4910178253649581076, guid: 6bb7fb6579c8be5488c4059b8303bd10,
@@ -5356,7 +5368,7 @@ PrefabInstance:
     - target: {fileID: 4110645790960641137, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4110645790960641137, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
@@ -5371,7 +5383,7 @@ PrefabInstance:
     - target: {fileID: 4910178253649581076, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6234608449143324711, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
@@ -5466,7 +5478,7 @@ PrefabInstance:
     - target: {fileID: 9018942797647592460, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
