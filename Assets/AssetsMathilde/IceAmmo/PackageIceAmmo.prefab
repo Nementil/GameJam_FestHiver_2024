@@ -184,7 +184,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 900e6b3b85fcfcf4999b7f505fc02788,
         type: 3}
       propertyPath: m_Name
-      value: IceAmmo
+      value: PackageIceAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 900e6b3b85fcfcf4999b7f505fc02788,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
