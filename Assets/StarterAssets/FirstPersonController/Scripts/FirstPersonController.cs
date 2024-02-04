@@ -115,6 +115,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			//Debug.Log($"Is Clicking:{_input.click}");
 		}
 
 		private void LateUpdate()

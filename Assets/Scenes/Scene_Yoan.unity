@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4053,6 +4053,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2092361262}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &935227661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935227653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb3089f833ad9f4589268b1848d4876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLight: 0
 --- !u!1 &957001162
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,6 +5171,26 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 745512495}
+    - target: {fileID: 3145731459105861847, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145731459105861847, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145731459105861847, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: b1ea4c9f-6bea-47e8-a030-22494414c239
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145731459105861847, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Click[/Mouse/leftButton]
+      objectReference: {fileID: 0}
     - target: {fileID: 3306783861101210753, guid: 6bb7fb6579c8be5488c4059b8303bd10,
         type: 3}
       propertyPath: m_Layer
@@ -5291,7 +5324,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4910178253649581076, guid: 6bb7fb6579c8be5488c4059b8303bd10,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 935227661}
   m_SourcePrefab: {fileID: 100100000, guid: 6bb7fb6579c8be5488c4059b8303bd10, type: 3}
 --- !u!1 &2136954278
 GameObject:

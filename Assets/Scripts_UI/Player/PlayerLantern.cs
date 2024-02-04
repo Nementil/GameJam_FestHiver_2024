@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerLantern : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class PlayerLantern : MonoBehaviour
 
     private bool isLanternActive = false;
     private float clickTime = 0f;
+    private StarterAssets.StarterAssetsInputs _input;
 
 
     // Start is called before the first frame update
     void Start()
     {
         currentLight = startingLight;
+        _input = GetComponent<StarterAssets.StarterAssetsInputs>();
     }
 
 
@@ -23,9 +26,10 @@ public class PlayerLantern : MonoBehaviour
     {
 
         // Enable use of Lantern
-        if (Input.GetMouseButtonDown(0))
+        if (_input.click)
         {
             LanternActivate();
+            _input.click=false;
         }
 
         // Lantern in usage
@@ -33,7 +37,7 @@ public class PlayerLantern : MonoBehaviour
 
 
         // Disable use of Lantern
-        if (Input.GetMouseButtonUp(0))
+        if (!_input.click)
         {
             LanternDeactivate();
         }
@@ -41,12 +45,13 @@ public class PlayerLantern : MonoBehaviour
         // Update UI 
         currentLight = Mathf.Clamp(currentLight, 0, startingLight);
 
-        UIController.instance.UpdateLantern(currentLight, startingLight);
+        //UIController.instance.UpdateLantern(currentLight, startingLight);
     }
 
     private void LanternDeactivate()
     {
         isLanternActive = false;
+        Debug.Log("Lantern OFF!");
     }
 
     void LanternState()
@@ -71,6 +76,7 @@ public class PlayerLantern : MonoBehaviour
     void LanternActivate()
     {
         isLanternActive = true;
+        Debug.Log("<Color=red>Lantern ON!</color>");
         clickTime = 0f;
     }
 
@@ -79,7 +85,7 @@ public class PlayerLantern : MonoBehaviour
     {
         currentLight = Mathf.Clamp(currentLight + amountLight, 0, startingLight);
 
-        UIController.instance.UpdateLantern(currentLight, startingLight);
+        //UIController.instance.UpdateLantern(currentLight, startingLight);
     }
 
 }

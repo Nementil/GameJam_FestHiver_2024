@@ -71,7 +71,7 @@ namespace UnityEngine{
         // Update is called once per frame
         void Update()
         {
-            Debug.Log($"<color=yellow>Can see player? :{canSeePlayer}</color>");
+            //Debug.Log($"<color=yellow>Can see player? :{canSeePlayer}</color>");
             if(canSeePlayer)
             {
                 if(Vector3.Distance(transform.position,player.transform.position)<attackDistance)
@@ -83,6 +83,7 @@ namespace UnityEngine{
                 }
                 else
                 {
+                    if(rageCount<2)
                     {
                         //Debug.Log($"{stateController.currentState}");
                         if(stateController.currentState!=chase)stateController.ChangeState(chase);
@@ -98,15 +99,15 @@ namespace UnityEngine{
                     agent.SetDestination(checkpoint[0].transform.position);
                 }
                 
-                if(Vector3.Distance(transform.position,player.transform.position)<=respawnDistance)
+                if(Vector3.Distance(transform.position,player.transform.position)<=respawnDistance && rageCount<2)
                 {
                     if(stateController.currentState!=stalk)stateController.ChangeState(stalk);
                 }
-                else
+                else if(Vector3.Distance(transform.position,player.transform.position)>respawnDistance)
                 {
                     if(stateController.currentState!=respawn)stateController.ChangeState(respawn);
                 }
-                if(rageCount>5)
+                if(rageCount>=2)
                 {
                     if(stateController.currentState!=angry)stateController.ChangeState(angry);
                 }
@@ -119,7 +120,7 @@ namespace UnityEngine{
             while(true)
             {
                 yield return wait;
-                Debug.Log("FOV Routine");
+                //Debug.Log("FOV Routine");
                 IsSeeingPlayer();
             }
         }
@@ -159,13 +160,6 @@ namespace UnityEngine{
             // {
             //     //canSeePlayer=false;
             // }
-        }
-        private void IsChasing()
-        {
-            //Music chase?
-            agent.speed=speedMonster;
-
-            agent.destination=player.transform.position;
         }
 
         public bool RandomPoint(Vector3 center,float range,out Vector3 result)

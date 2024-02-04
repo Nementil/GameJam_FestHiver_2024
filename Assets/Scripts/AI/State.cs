@@ -54,6 +54,7 @@ public class Chase:State
     }
     public override void OnEnter()
     {
+        currentTimer=timer;
         _monstre.agent.autoBraking=false;
         _monstre.agent.speed=_monstre.player.GetComponent<FirstPersonController>().MoveSpeed-2;
         Debug.Log("Is Chasing!");
@@ -82,6 +83,8 @@ public class Stalk:State
     public override string stateName {get;set;}
     public Monstre _monstre;
     float[] checkpointDistance;
+    public float timer=5f;
+    public float currentTimer;
     public Stalk(Monstre monstre)
     {
         stateName="Stalk";
@@ -90,6 +93,7 @@ public class Stalk:State
     public override void OnEnter()
     {
         Debug.Log("Is Stalking!");
+        currentTimer=timer;
         _monstre.agent.autoBraking=false;
     }
     public override void OnExit()
@@ -101,13 +105,13 @@ public class Stalk:State
         checkpointDistance = new float[_monstre.checkpoint.Length];
         if(_monstre.checkpoint.Length==0)
         {
-            UnityEngine.Debug.Log("<color=red>No checkpoint in store Error<color/>");
+            Debug.Log("<color=red>No checkpoint in store Error<color/>");
             return;
         }
         if(_monstre.agent.remainingDistance<=_monstre.agent.stoppingDistance||_monstre.agent.destination==null)
         {
             Vector3 point;
-            if(_monstre.RandomPoint(_monstre.transform.position,15f,out point))
+            if(_monstre.RandomPoint(_monstre.player.transform.position,30f,out point))
             {
                 _monstre.agent.SetDestination(point);
             }
@@ -119,6 +123,8 @@ public class Attack:State
     public override StateController sc{get;set;}
     public override string stateName {get;set;}
     public Monstre _monstre;
+    public float timer=5f;
+    public float currentTimer;
     public Attack(Monstre monstre)
     {
         stateName="Attack";
@@ -127,6 +133,7 @@ public class Attack:State
     public override void OnEnter()
     {
         //Attack Player, remove hp
+        currentTimer=timer;
         Debug.Log("Is Attacking!");
         
     }
@@ -136,7 +143,7 @@ public class Attack:State
     }
     public override void OnUpdate()
     {
-        Debug.Log("Player in Attack Range!");
+        //Debug.Log("Player in Attack Range!");
     }
 }
 public class Angry:State
@@ -144,6 +151,8 @@ public class Angry:State
     public override StateController sc{get;set;}
     public override string stateName {get;set;}
     public Monstre _monstre;
+    public float timer=8f;
+    public float currentTimer;
     public Angry(Monstre monstre)
     {
         stateName="Angry";
@@ -152,16 +161,26 @@ public class Angry:State
     public override void OnEnter()
     {
         Debug.Log("Is Angry!");
+        currentTimer=timer;
         _monstre.agent.speed=_monstre.player.GetComponent<FirstPersonController>().SprintSpeed-2;
     }
     public override void OnExit()
     {
+        Debug.Log($"Time in Angry State is {currentTimer}");
+        
         _monstre.agent.speed=_monstre.player.GetComponent<FirstPersonController>().MoveSpeed-2;
         _monstre.rageCount=0;
     }
     public override void OnUpdate()
     {
+        currentTimer-=Time.deltaTime;
         _monstre.agent.destination=_monstre.player.transform.position;
+        if(currentTimer<=0)
+        {
+            Debug.Log("Anger Times up");
+            currentTimer=timer;
+            OnExit();
+        }
     }
 }
 public class Respawn:State
@@ -169,6 +188,8 @@ public class Respawn:State
     public override StateController sc{get;set;}
     public override string stateName {get;set;}
     public Monstre _monstre;
+    public float timer=5f;
+    public float currentTimer;
     public Respawn(Monstre monstre)
     {
         stateName="Respawn";
@@ -177,6 +198,7 @@ public class Respawn:State
     public override void OnEnter()
     {
         Debug.Log("Respawning");
+        currentTimer=timer;
         float[] checkpointDistance=new float[_monstre.checkpoint.Length];
         int index=0;
         // if(Vector3.Distance(_monstre.transform.position,_monstre.player.transform.position)>_monstre.respawnDistance)
