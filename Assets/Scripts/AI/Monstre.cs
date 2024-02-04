@@ -9,23 +9,30 @@ using UnityEngine.Playables;
 namespace UnityEngine{
     public class Monstre : MonoBehaviour
     {
+
+        [field:Header("References")]
         [SerializeField] public NavMeshAgent agent {get;set;}
-        [SerializeField] public monsterState state {get;set;}
         [SerializeField] public  GameObject player;
-        [SerializeField] public float speedMonster{get;set;}
-        [SerializeField] public float accelerationMonster{get;set;}
+        [field:Header("Monster Agent Speed Modifier")]
+        [SerializeField] public int rageCount;
+        [SerializeField] public float speedMonster;
+        [field:Header("Monster FOV Parameters")]
         [SerializeField] float attackDistance; //Disstance du joueur avant d'attaquer
         [Range(1,360)]
         [SerializeField] int fov;// moitié du fov!
         [SerializeField] public float searchInterval;//Interval de la coroutine de recherche
         [SerializeField] public float searchRadius; //Rayon de recherche de la sphere
-        [SerializeField] public float respawnDistance{get;set;} //Rayon de recherche de la sphere
-        [SerializeField] public int rageCount {get;set;}
+        [field:Header("Monster Respawn")]
+        public GameObject[] checkpoint; //Gameobjects pour respawn
+        [SerializeField] public float respawnDistance; //Rayon de recherche de la sphere
+        
+        [field:Header("Monster Mask Paramaters")]
         [SerializeField] public LayerMask targetMask; //Mask du joueur
         [SerializeField] public LayerMask obstructionMask; //Mask de l'environment
-        public GameObject[] checkpoint; //Gameobjects pour respawn
         public bool canSeePlayer{get;private set;} //Bool pour savoir si le joueur est en ligne de vue
         //public GameEvent monsterEvent;
+
+        [field:Header("Monster States")]
         [SerializeField] public StateController stateController;
         [SerializeField] public State currentState;
         private Stalk stalk;
@@ -41,6 +48,8 @@ namespace UnityEngine{
             stalk=new(this);
             chase=new(this);
             attack=new(this);
+            respawn=new(this);
+            angry=new(this);
             if(player==null)
             {
                 player=GameObject.FindGameObjectWithTag("Player");
@@ -48,8 +57,7 @@ namespace UnityEngine{
         }
         void Start()
         {
-            speedMonster=agent.speed;
-            accelerationMonster=agent.acceleration;
+            stateController.ChangeState(stalk);
             canSeePlayer=false;
             if(player==null)
             {
@@ -57,8 +65,7 @@ namespace UnityEngine{
             }
             StartCoroutine(FOVRoutine());
 
-            stateController.ChangeState(stalk);
-            Debug.Log($"Current state is: {stateController.currentState}");
+            //Debug.Log($"Current state is: {stateController.currentState}");
         }
 
         // Update is called once per frame
@@ -69,17 +76,16 @@ namespace UnityEngine{
             {
                 if(Vector3.Distance(transform.position,player.transform.position)<attackDistance)
                 {
-                    if(state!=monsterState.Attack)
+                    if(stateController.currentState!=attack)
                     {
-                        state=monsterState.Attack;
                         stateController.ChangeState(attack);
                     }
                 }
                 else
                 {
                     {
-                        state=monsterState.Chase;
-                        stateController.ChangeState(chase);
+                        //Debug.Log($"{stateController.currentState}");
+                        if(stateController.currentState!=chase)stateController.ChangeState(chase);
                     }
                 }
             }
@@ -88,23 +94,21 @@ namespace UnityEngine{
                 if(agent.destination==null)
                 {
                     Debug.Log("destination null");
+                    //Checkpoint nearest to player?
                     agent.SetDestination(checkpoint[0].transform.position);
                 }
                 
                 if(Vector3.Distance(transform.position,player.transform.position)<=respawnDistance)
                 {
-                    state=monsterState.Stalk;
-                    stateController.ChangeState(stalk);
+                    if(stateController.currentState!=stalk)stateController.ChangeState(stalk);
                 }
                 else
                 {
-                    state=monsterState.Respawn;
-                    stateController.ChangeState(respawn);
+                    if(stateController.currentState!=respawn)stateController.ChangeState(respawn);
                 }
                 if(rageCount>5)
                 {
-                    state=monsterState.Angry;
-                    stateController.ChangeState(angry);
+                    if(stateController.currentState!=angry)stateController.ChangeState(angry);
                 }
             }
 
@@ -124,7 +128,7 @@ namespace UnityEngine{
             Collider [] rangeChecks=Physics.OverlapSphere(transform.position,searchRadius,targetMask);
             if(rangeChecks.Length!=0)
             {
-                Debug.Log("Player in Sphere");
+                //Debug.Log("Player in Sphere");
                 Transform target = rangeChecks[0].transform;
                 Vector3 directionToTarget= (target.position-transform.position).normalized;
                 Debug.DrawRay(transform.position,directionToTarget,Color.red);
@@ -134,29 +138,33 @@ namespace UnityEngine{
                     float distanceToTarget= Vector3.Distance(transform.position,target.position);
                     if(!Physics.Raycast(transform.position,directionToTarget,distanceToTarget,obstructionMask))
                     {
-                        canSeePlayer=true;
+                        Debug.Log("In angle, no obstructions");
                     }
                     else
                     {
                         //Monster must be more inquisitive!State change?
-                        canSeePlayer=false;
+                        Debug.Log("Looking at Player");
+                        transform.rotation=Quaternion.LookRotation(player.transform.position,Vector3.up);
+                        //canSeePlayer=false;
                     }
                 }
-                else 
-                {
-                    canSeePlayer = false;
-                }
+                canSeePlayer=true;
             }
-            else if (canSeePlayer)
+            else 
             {
-                //canSeePlayer=false;
+                Debug.Log("Out of angle");
+                canSeePlayer = false;
             }
+            // else if (canSeePlayer)
+            // {
+            //     //canSeePlayer=false;
+            // }
         }
         private void IsChasing()
         {
             //Music chase?
             agent.speed=speedMonster;
-            agent.acceleration=accelerationMonster;
+
             agent.destination=player.transform.position;
         }
 
@@ -172,29 +180,6 @@ namespace UnityEngine{
             result= Vector3.zero;
             return false;
         }
-        private void IsAttacking()
-        {
-            Debug.Log("Player in Attack Range!");
-        }
-        private void IsRespawning()
-        {
-            //Mettre in timer pour calculer quand il faut mixup
-
-        }
-        private void IsAngry()
-        {
-            agent.speed*=1.5f;
-            agent.acceleration*=1.1f;
-            agent.destination=player.transform.position;
-        }
     }
 }
-public enum monsterState
-{
-    Stalk,
-    Chase,
-    Attack,
-    Respawn,
-    Angry,
 
-}

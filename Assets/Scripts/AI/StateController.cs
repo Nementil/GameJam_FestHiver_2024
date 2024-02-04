@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
-    [SerializeField] public string nameState; 
-    public  State currentState;
+    public  State currentState=null;
     //public Chase ChaseState = new Chase();
     //public Stalk StalkState = new Stalk();
     private void Start()
@@ -25,7 +24,7 @@ public class StateController : MonoBehaviour
         //Debug.Log($"Current state is {currentState.stateName}");
         if (currentState != null)
         {
-            currentState.OnExit();
+            currentState.OnStateExit();
         }
         currentState = newState;
         currentState.OnStateEnter();
