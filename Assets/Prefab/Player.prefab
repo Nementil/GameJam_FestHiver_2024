@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6487230760007070564}
   - component: {fileID: 6781397811818972077}
   - component: {fileID: 487433434577525711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3306783861101210753}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -119,13 +119,13 @@ GameObject:
   - component: {fileID: 2597438924902696556}
   - component: {fileID: 8896639805024968782}
   - component: {fileID: 5929831039350614954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PointOfOrigin
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2782141229753833813
 Transform:
   m_ObjectHideFlags: 0
@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 3145731459105861847}
   - component: {fileID: 8977351768496562156}
   - component: {fileID: 312394106221527197}
+  - component: {fileID: 2317688270900312802}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -383,6 +384,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 980e881e-182c-404c-8cbf-3d09fdb48fef
     m_ActionName: Player/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1ea4c9f-6bea-47e8-a030-22494414c239
+    m_ActionName: Player/Click[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
@@ -400,16 +405,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
+  MoveSpeed: 9
+  SprintSpeed: 16
   RotationSpeed: 1
   SpeedChangeRate: 10
   JumpHeight: 1.2
-  Gravity: -15
+  Gravity: -9.8
   JumpTimeout: 0.1
   FallTimeout: 0.15
   Grounded: 1
-  GroundedOffset: -0.14
+  GroundedOffset: 0.9
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
@@ -433,9 +438,27 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  click: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &2317688270900312802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910178253649581076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb3089f833ad9f4589268b1848d4876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLight: 0
+  startingLight: 10
+  enemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &9018942797647592460
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3992730941725964239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cam
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}

@@ -4,6 +4,7 @@ using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public abstract class State 
 {
@@ -135,7 +136,7 @@ public class Attack:State
         //Attack Player, remove hp
         currentTimer=timer;
         Debug.Log("Is Attacking!");
-        
+        SceneManager.LoadScene(0);
     }
     public override void OnExit()
     {

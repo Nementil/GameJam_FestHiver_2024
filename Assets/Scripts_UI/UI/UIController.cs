@@ -26,6 +26,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject gameoverScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] public GameObject finalWin;
+    [SerializeField] public GameObject player;
     [Header("UI healthSlider")]
     [SerializeField] private Slider healthSlider;
     
@@ -49,6 +50,8 @@ public class UIController : MonoBehaviour
         pauseScreen.SetActive(false);
         gameoverScreen.SetActive(false);
         winScreen.SetActive(false);
+        finalWin=GameObject.FindWithTag("Final");
+        finalWin=GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -61,6 +64,10 @@ public class UIController : MonoBehaviour
                 PauseMenu(true);
             else
                 PauseMenu(false);
+        }
+        if(Vector3.Distance(player.transform.position,finalWin.transform.position)<=10)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 648c5485c3b77f4b889bb0130ef8f5f6
     GuidInternal: 
-    m_lastTime: -8584945311098962353
+    m_lastTime: -8584945250390923081
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: b3fa2fbeebf0de408c5f679e08a903be
     GuidInternal: 
-    m_lastTime: -8584945311099919608
+    m_lastTime: -8584945250393907846
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 4ea1f95256611347b95a82a98e45c380
     GuidInternal: 
-    m_lastTime: -8584945289957868522
+    m_lastTime: -8584945250390992896
     List:
     - name: main
       guid: 87b5630b264d9e44a9cd9f9e219da087
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 419c2a82a33be643bc0bc78f99453c4c
     GuidInternal: 
-    m_lastTime: -8584945289958004268
+    m_lastTime: -8584945250396590679
     List:
     - name: Play_Crystal_Emitter
       guid: 7dff6c67f59fac4f9d27252ddd611a83
@@ -113,6 +113,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Footstep_Material
+      guid: 1f86ad070844524f85979f1e1a2abf76
+      id: 1766743556
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 419c2a82a33be643bc0bc78f99453c4c
+      - ElementName: Play_Footstep_Material
+        ObjectType: 3
+        guid: 1f86ad070844524f85979f1e1a2abf76
+      Path: Events\Default Work Unit\Play_Footstep_Material
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Icescape_Level
+      guid: 465ebbcb934416499d77fb08d32ce218
+      id: 916155420
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 419c2a82a33be643bc0bc78f99453c4c
+      - ElementName: Play_Icescape_Level
+        ObjectType: 3
+        guid: 465ebbcb934416499d77fb08d32ce218
+      Path: Events\Default Work Unit\Play_Icescape_Level
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -125,7 +159,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 5bf18d6cb4791e448c0a84141bd7b0cf
     GuidInternal: 
-    m_lastTime: -8584945311100168947
+    m_lastTime: -8584945250396580711
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -139,7 +173,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 834901751f72424d904e5aa26f906ccd
     GuidInternal: 
-    m_lastTime: -8584945311100358114
+    m_lastTime: -8584945250390962979
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -153,8 +187,74 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: e320105f5dd7d046b3bf0375864fedf9
     GuidInternal: 
-    m_lastTime: -8584945311100523204
-    List: []
+    m_lastTime: -8584945250390942985
+    List:
+    - name: Player_footsteps
+      guid: 7999d83452632b4f8fdba0c520d1e10e
+      id: 1730208058
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e320105f5dd7d046b3bf0375864fedf9
+      - ElementName: Player_footsteps
+        ObjectType: 11
+        guid: 7999d83452632b4f8fdba0c520d1e10e
+      Path: Switches\Default Work Unit\Player_footsteps
+      values:
+      - name: Dirt
+        guid: 856b20c8cc4a4842b3521d2854050ca5
+        id: 2195636714
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: e320105f5dd7d046b3bf0375864fedf9
+        - ElementName: Player_footsteps
+          ObjectType: 11
+          guid: 7999d83452632b4f8fdba0c520d1e10e
+        - ElementName: Dirt
+          ObjectType: 10
+          guid: 856b20c8cc4a4842b3521d2854050ca5
+      - name: Snow
+        guid: 264c997431a61b4a811387abf77499e7
+        id: 787898836
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: e320105f5dd7d046b3bf0375864fedf9
+        - ElementName: Player_footsteps
+          ObjectType: 11
+          guid: 7999d83452632b4f8fdba0c520d1e10e
+        - ElementName: Snow
+          ObjectType: 10
+          guid: 264c997431a61b4a811387abf77499e7
+      - name: Wood
+        guid: df910fef5c980245b659eb71b6fb445a
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: e320105f5dd7d046b3bf0375864fedf9
+        - ElementName: Player_footsteps
+          ObjectType: 11
+          guid: 7999d83452632b4f8fdba0c520d1e10e
+        - ElementName: Wood
+          ObjectType: 10
+          guid: df910fef5c980245b659eb71b6fb445a
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -167,10 +267,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: ec7dee9da5839c40bf12e86833b7b845
     GuidInternal: 
-    m_lastTime: -8584945311099477410
+    m_lastTime: -8584945250390933060
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

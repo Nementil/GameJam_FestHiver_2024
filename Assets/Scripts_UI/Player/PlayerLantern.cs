@@ -83,7 +83,7 @@ public class PlayerLantern : MonoBehaviour
         clickTime = 0f;
         
 
-        Collider[] colliding =Physics.OverlapSphere(transform.position,5f,enemy);
+        Collider[] colliding =Physics.OverlapSphere(transform.position,10f,enemy);
         if(colliding.Length>0)
         {
             foreach (var item in colliding)
